@@ -3,7 +3,7 @@ use crate::{
     TerminalLayer,
 };
 use bevy::{
-    prelude::{AssetServer, Assets, Camera2dBundle, Commands, Component, Mesh, Res, ResMut},
+    prelude::{AssetServer, Assets, UiCameraBundle, Commands, Component, Mesh, Res, ResMut},
     sprite::ColorMaterial,
 };
 
@@ -19,7 +19,7 @@ pub(crate) fn load_terminals(
 ) {
     if context.with_ortho_camera {
         commands
-            .spawn_bundle(Camera2dBundle::default())
+            .spawn_bundle(UiCameraBundle::default())
             .insert(BracketCamera);
     }
 
